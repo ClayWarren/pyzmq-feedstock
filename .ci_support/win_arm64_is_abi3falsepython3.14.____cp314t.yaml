@@ -9,15 +9,15 @@ channel_targets:
 cxx_compiler:
 - vs2022
 is_abi3:
-- true
+- false
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.10.* *_cpython
+- 3.14.* *_cp314t
 target_platform:
-- win-64
+- win-arm64
 zeromq:
 - 4.3.5
 zip_keys:
