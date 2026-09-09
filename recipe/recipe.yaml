@@ -48,8 +48,11 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - ${{ compiler('cxx') }}
-    # cmake 4.1 breaks cross-compilation
-    - cmake 4.0.*
+    # CMake 4.0 is unavailable on win-arm64. Native builds can use newer
+    # versions; retain the existing pin elsewhere (4.1 breaks cross-compilation).
+    - if: target_platform == "win-arm64" and build_platform == target_platform
+      then: cmake >=4.0
+      else: cmake 4.0.*
   host:
     - python
     - pip
