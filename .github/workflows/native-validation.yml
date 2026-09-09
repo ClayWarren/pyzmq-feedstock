@@ -12,14 +12,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - platform: win-64
-            runner: windows-2022
-            config: win_64_python3.12.____cpython
-            abi3: 'true'
-          - platform: win-64
-            runner: windows-2022
-            config: win_64_python3.14.____cp314t
-            abi3: 'false'
           - platform: win-arm64
             runner: windows-11-arm
             config: win_arm64_is_abi3truepython3.14.____cp314
